@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>product card</title>
+    <style>
+        .product-card {
+            width: 300px;
+            border: 1px solid;
+            display: block;
+            margin: 50px auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            padding: 0 20px;
+        }
+
+        .product-img {
+            height: 150px;
+            display: block;
+            margin: 10px auto;
+
+        }
+
+        .product-title {
+            font-size: 20px;
+        }
+
+        .product-price {
+            font-size: 18px;
+        }
+
+        .btn-add-cart {
+            display: block;
+            margin: 30px auto;
+            font-size: 20px;
+            padding: 10px 30px;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .quantity-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .btn-quantity {
+            width: 40px;
+            cursor: pointer;
+
+        }
+
+        .product-quantity {
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="product-card">
+        <img src="./mens sneakers.jpg" alt="" class="product-img">
+        <h1 class="product-title">men's sneakers</h1>
+        <p class="product-decsription">Exclusive design and durable materials every step feels light and breezy.
+            Breathable, free-moving fabrics which adjust according to your foot and creates an astoundingly easy-going
+            experience.</p>
+        <p class="product-price">Price: ₹999</p>
+        <div class="quantity-container">
+            <img src="./minus.png" alt="" class="btn-quantity" onclick="decreaseQuantity()">
+            <span class="product-quantity" id="quantity-text"> 1</span>
+            <img src="./add.png" alt="" class="btn-quantity" onclick="increaseQuantity()">
+        </div>
+        <button type="button" class="btn-add-cart"> Add to Cart</button>
+    </div>
+    <script>
+        const quantityElement=document.getElementById("quantity-text");
+      function increaseQuantity() {
+         let quantity= parseInt(quantityElement.innerText);
+         if (quantity<10) {
+            quantityElement.innerText= ++quantity;
+         }
+         else{
+            alert("you can't ad more than 10 items")
+         }
+         
+
+      }
+      function decreaseQuantity() {
+        let quantity=parseInt(quantityElement.innerText);
+        if(quantity>1){
+            quantityElement.innerText= --quantity; 
+        }
+        else{
+            alert("you can't add less than 1 item")
+        }    
+    }
+    </script>
+</body>
+
+</html>
