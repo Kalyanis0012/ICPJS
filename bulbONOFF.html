@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulb On Off</title>
+</head>
+
+<body>
+    <img src="turned-off.png" alt="" id="img-bulb" height="100px">
+    <!-- ------------- -->
+    <!-- <button type="button" onclick="bulbOn()">ON</button>
+    <button type="button" onclick="bulbOff()">OFF</button> -->
+    <!-- ------------------------------------- -->
+    <button type="button" onclick="bulbSwitch('on')">ON</button>
+    <button type="button" onclick="bulbSwitch('off')">OFF</button>
+    <!-- ---------------------------------------- -->
+    
+    <script>
+        // function bulbOn() {
+        //     const bulbElement=document.getElementById("img-bulb");
+        //     bulbElement.src="light-bulb.png";
+            
+        // }
+        // function bulbOff() {
+        //     const bulbElement=document.getElementById("img-bulb");
+        //     bulbElement.src="turned-off.png";
+        // }
+        // ----------------------------------------
+        function bulbSwitch(state){
+            const bulbElement=document.getElementById("img-bulb");
+            if(state == "on"){
+                bulbElement.src="light-bulb.png";
+            }
+            else{
+                bulbElement.src="turned-off.png";
+            }
+
+        }
+        
+    </script>
+</body>
+</html>
