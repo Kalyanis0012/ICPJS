@@ -67,26 +67,39 @@
 <body>
    <div class="parent">
     <p class="para">MJ-1200</p>
-    <input type="text" class="input-field">
+    <input type="text" class="input-field" id="input">
     <div class="button-container">
-    <button class="btn">1</button>
-    <button class="btn">2</button>
-    <button class="btn">3</button>
-    <button class="btn" id="btn-spl">+</button>
-    <button class="btn">4</button>
-    <button class="btn">5</button>
-    <button class="btn">6</button>
-    <button class="btn" id="btn-spl">-</button>
-    <button class="btn">7</button>
-    <button class="btn">8</button>
-    <button class="btn">9</button>
-    <button class="btn" id="btn-spl">*</button>
-    <button class="btn" id="btn-spl">.</button>
-    <button class="btn">0</button>
-    <button class="btn" id="btn-spl">=</button>
-    <button class="btn" id="btn-spl">/</button>
+    <button class="btn" onclick="pressKey('1')">1</button>
+    <button class="btn" onclick="pressKey('2')">2</button>
+    <button class="btn" onclick="pressKey('3')">3</button>
+    <button class="btn" id="btn-spl" onclick="pressKey('+')">+</button>
+    <button class="btn" onclick="pressKey('4')">4</button>
+    <button class="btn" onclick="pressKey('5')">5</button>
+    <button class="btn" onclick="pressKey('6')">6</button>
+    <button class="btn" id="btn-spl" onclick="pressKey('-')">-</button>
+    <button class="btn" onclick="pressKey('7')">7</button>
+    <button class="btn" onclick="pressKey('8')">8</button>
+    <button class="btn" onclick="pressKey('9')">9</button>
+    <button class="btn" id="btn-spl" onclick="pressKey('*')">*</button>
+    <button class="btn" id="btn-spl" onclick="pressKey('.')">.</button>
+    <button class="btn" onclick="pressKey('0')">0</button>
+    <button class="btn" id="btn-spl" onclick="calculate()">=</button>
+    <button class="btn" id="btn-spl" onclick="pressKey('/')">/</button>
    
     </div>
    </div> 
+   <script>
+    function pressKey(keyValue){
+        const screenElement=document.getElementById("input");
+        // screenElement.value=screenElement.value+keyValue;
+        screenElement.value+=keyValue;
+
+    }
+    function calculate(){
+        const screenElement=document.getElementById("input");
+        screenElement.value=eval(screenElement.value)
+
+    }
+   </script>
 </body>
 </html>
